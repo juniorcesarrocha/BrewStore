@@ -41,5 +41,15 @@ namespace BrewStore.Controllers
 
             return Ok();
         }
+
+        [HttpPost("finalizar-pedido")]
+        public async Task<IActionResult> FinalizarPedido(int idCliente, [FromBody] NovoProdutoDto novoProduto)
+        {
+            // define o pedido como finalizado. Proxima etapa: Pagamento
+
+            return Ok();
+        }
+
+
     }
 }
