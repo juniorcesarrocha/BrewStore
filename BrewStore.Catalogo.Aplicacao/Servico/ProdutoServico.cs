@@ -18,17 +18,17 @@ namespace BrewStore.Catalogo.Aplicacao.Servico
             _mapper = mapper;
         }
 
-        public async Task<ProdutoDto> ObterPorId(int id)
+        public async Task<ProdutoViewModel> ObterPorId(int id)
         {
-            return _mapper.Map<ProdutoDto>(await _produtoRepositorio.ObterPorId(id));
+            return _mapper.Map<ProdutoViewModel>(await _produtoRepositorio.ObterPorId(id));
         }
 
-        public async Task<IEnumerable<ProdutoDto>> ObterTodos()
+        public async Task<IEnumerable<ProdutoViewModel>> ObterTodos()
         {
-            return _mapper.Map<IEnumerable<ProdutoDto>>(await _produtoRepositorio.ObterTodos());
+            return _mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepositorio.ObterTodos());
         }
 
-        public async Task Adicionar(ProdutoDto produtoViewModel)
+        public async Task Adicionar(ProdutoViewModel produtoViewModel)
         {
             var produto = _mapper.Map<ProdutoDominio>(produtoViewModel);
 
@@ -37,7 +37,7 @@ namespace BrewStore.Catalogo.Aplicacao.Servico
             await _produtoRepositorio.UnitOfWork.Commit();
         }
 
-        public async Task Atualizar(ProdutoDto produtoViewModel)
+        public async Task Atualizar(ProdutoViewModel produtoViewModel)
         {
             var produto = _mapper.Map<ProdutoDominio>(produtoViewModel);
 

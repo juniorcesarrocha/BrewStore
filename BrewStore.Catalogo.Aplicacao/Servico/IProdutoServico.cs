@@ -4,8 +4,8 @@ namespace BrewStore.Catalogo.Aplicacao.Servico
 {
     public interface IProdutoServico
     {
-        Task<ProdutoDto> ObterPorId(int id);
+        Task<ProdutoViewModel> ObterPorId(int id);
 
-        Task Adicionar(ProdutoDto produto);
+        Task Adicionar(ProdutoViewModel produto);
     }
 }

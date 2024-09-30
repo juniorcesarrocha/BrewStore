@@ -8,7 +8,7 @@ namespace BrewStore.Catalogo.Aplicacao.Mapeamento
     {
         public CatalogoAplicacaoMapper()
         {
-            CreateMap<ProdutoDominio, ProdutoDto>(MemberList.None).ReverseMap();
+            CreateMap<ProdutoDominio, ProdutoViewModel>(MemberList.None).ReverseMap();
         }
     }
 }
